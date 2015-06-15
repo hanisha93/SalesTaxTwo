@@ -37,4 +37,14 @@ public class ParserTest {
         assertEquals(salesTax, expectedSalesTax);
     }
 
+    @Test
+    public void specToCheckParserReturnsSalesTaxForNonExceptionalItems() {
+        SalesTax salesTax = mock(SalesTax.class);
+        Parser parser = new Parser();
+        salesTax = parser.parser("1 music cd at 25.9");
+
+        SalesTax expectedSalesTax = new SalesTax(1, "musiccd", 25.9, 10);
+        assertEquals(salesTax, expectedSalesTax);
+    }
+
 }
