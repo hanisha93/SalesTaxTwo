@@ -19,4 +19,11 @@ public class SalesTaxTest {
         salesTax.computeTax();
         assertEquals("1 book 45.9",salesTax.toString());
     }
+
+    @Test
+    public void specToCheckComputeTaxForNonExceptionalItems() {
+        SalesTax salesTax = new SalesTax(1,"Bottleofperfume",45.9,10);
+        salesTax.computeTax();
+        assertEquals("1 Bottleofperfume 50.5",salesTax.toString());
+    }
 }

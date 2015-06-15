@@ -21,6 +21,7 @@ public class SalesTax {
         DecimalFormat df = new DecimalFormat("#.##");
         df.format(taxDeducted);
         prize += taxDeducted;
+        prize = Math.floor(prize * 100) / 100;
     }
 
     @Override
