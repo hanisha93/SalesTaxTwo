@@ -8,7 +8,7 @@ import static org.mockito.Mockito.mock;
 public class ParserTest {
 
     @Test
-    public void specToCheckParserReturnsSalesTaxForExceptionalItems() {
+    public void specToCheckParserReturnsSalesTaxOnlyForExceptionalItems() {
         SalesTax salesTax = mock(SalesTax.class);
         Parser parser = new Parser();
         salesTax = parser.parser("1 book at 25.9");
@@ -38,7 +38,7 @@ public class ParserTest {
     }
 
     @Test
-    public void specToCheckParserReturnsSalesTaxForNonExceptionalItems() {
+    public void specToCheckParserReturnsSalesTaxOnlyForNonExceptionalItems() {
         SalesTax salesTax = mock(SalesTax.class);
         Parser parser = new Parser();
         salesTax = parser.parser("1 music cd at 25.9");
