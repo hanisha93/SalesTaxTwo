@@ -21,13 +21,13 @@ public class Parser {
 
         double prize = Double.parseDouble(tokens[tokens.length - 1]);
         if (((item.equals("chocolate")) || (item.equals("book")) || (item.equals("medicine"))) && (imported)) {
-            return new SalesTax(noOfItems, item, prize, 5);
+            return new SalesTax(noOfItems, item, prize, 5, 0);
         } else if (((item.equals("chocolate")) || (item.equals("book")) || (item.equals("medicine"))) && (!imported)) {
-            return new SalesTax(noOfItems, item, prize, 0);
+            return new SalesTax(noOfItems, item, prize, 0, 0);
         } else if (!imported) {
-            return new SalesTax(noOfItems, item, prize, 10);
+            return new SalesTax(noOfItems, item, prize, 10, 0);
         } else {
-            return new SalesTax(noOfItems, item, prize, 15);
+            return new SalesTax(noOfItems, item, prize, 15, 0);
         }
     }
 }

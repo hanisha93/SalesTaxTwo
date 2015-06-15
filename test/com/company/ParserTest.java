@@ -13,7 +13,7 @@ public class ParserTest {
         Parser parser = new Parser();
         salesTax = parser.parse("1 book at 25.9");
 
-        SalesTax expectedSalesTax = new SalesTax(1, "book", 25.9, 0);
+        SalesTax expectedSalesTax = new SalesTax(1, "book", 25.9, 0,0);
         assertEquals(salesTax, expectedSalesTax);
     }
 
@@ -23,7 +23,7 @@ public class ParserTest {
         Parser parser = new Parser();
         salesTax = parser.parse("1 imported book at 25.9");
 
-        SalesTax expectedSalesTax = new SalesTax(1, "book", 25.9, 5);
+        SalesTax expectedSalesTax = new SalesTax(1, "book", 25.9, 5,0);
         assertEquals(salesTax, expectedSalesTax);
     }
 
@@ -33,7 +33,7 @@ public class ParserTest {
         Parser parser = new Parser();
         salesTax = parser.parse("1 imported music cd at 25.9");
 
-        SalesTax expectedSalesTax = new SalesTax(1, "musiccd", 25.9, 15);
+        SalesTax expectedSalesTax = new SalesTax(1, "musiccd", 25.9, 15,0);
         assertEquals(salesTax, expectedSalesTax);
     }
 
@@ -43,7 +43,7 @@ public class ParserTest {
         Parser parser = new Parser();
         salesTax = parser.parse("1 music cd at 25.9");
 
-        SalesTax expectedSalesTax = new SalesTax(1, "musiccd", 25.9, 10);
+        SalesTax expectedSalesTax = new SalesTax(1, "musiccd", 25.9, 10,0);
         assertEquals(salesTax, expectedSalesTax);
     }
 

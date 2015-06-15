@@ -1,19 +1,17 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-	    Scanner scanner = new Scanner(System.in);
+        ArrayList<String> listOfItems = new ArrayList<String>();
+        Scanner scanner = new Scanner(System.in);
         View view = new View(scanner);
-
-
-            String input = view.readInput();
-            Parser parser = new Parser();
-            SalesTax salesTax = parser.parse(input);
-            salesTax.computeTax();
-            view.printToConsole(salesTax.toString());
+        Parser parser = new Parser();
+        Controller cont = new Controller(view, parser, listOfItems);
+        cont.start();
 
     }
 }

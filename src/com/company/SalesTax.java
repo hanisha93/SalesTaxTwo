@@ -7,26 +7,32 @@ public class SalesTax {
     String item;
     double prize;
     int tax;
+    double total;
 
-    public SalesTax(int noOfItems, String item, double prize, int tax) {
+    public SalesTax(int noOfItems, String item, double prize, int tax,double total) {
         this.noOfItems = noOfItems;
         this.item = item;
         this.prize = prize;
         this.tax = tax;
+        this.total=total;
     }
 
     public void computeTax() {
         double taxDeducted = (tax * prize) / 100;
-        taxDeducted= (double) Math.ceil(taxDeducted / 0.05f) * 0.05f;
+        taxDeducted = (double) Math.ceil(taxDeducted / 0.05f) * 0.05f;
         DecimalFormat df = new DecimalFormat("#.##");
         df.format(taxDeducted);
         prize += taxDeducted;
         prize = Math.floor(prize * 100) / 100;
+        total += prize;
     }
 
+    public double getTotal() {
+        return total;
+    }
     @Override
     public String toString() {
-        return noOfItems + " " + item + " " + prize;
+        return noOfItems + " " + item + " " + prize + "\n";
     }
 
     @Override
