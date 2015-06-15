@@ -33,6 +33,17 @@ public class ViewTest {
         assertEquals("1 chocolate at 9", outContent.toString());
     }
 
+    @Test
+    public void specForCheckingReadingInputFromConsole() {
+
+        ByteArrayInputStream inContent = new ByteArrayInputStream("chocolate at 9".getBytes());
+        System.setIn(inContent);
+        View view = new View(new Scanner(System.in));
+        String input = view.readInput();
+
+        assertThat(input, is(equalTo("chocolate at 9")));
+    }
+
     @After
     public void cleanUpStreams() {
         setOut(null);

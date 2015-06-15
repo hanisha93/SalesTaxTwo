@@ -13,4 +13,8 @@ public class View {
     public void printToConsole(String output) {
         System.out.print(output);
     }
+
+    public String readInput() {
+        return scanner.nextLine();
+    }
 }
