@@ -1,5 +1,7 @@
 package com.company;
 
+import java.text.DecimalFormat;
+
 public class SalesTax {
     int noOfItems;
     String item;
@@ -11,6 +13,19 @@ public class SalesTax {
         this.item = item;
         this.prize = prize;
         this.tax = tax;
+    }
+
+    public void computeTax() {
+        double taxDeducted = (tax * prize) / 100;
+        taxDeducted= (double) Math.ceil(taxDeducted / 0.05f) * 0.05f;
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.format(taxDeducted);
+        prize += taxDeducted;
+    }
+
+    @Override
+    public String toString() {
+        return noOfItems + " " + item + " " + prize;
     }
 
     @Override

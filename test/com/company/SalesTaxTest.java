@@ -13,4 +13,10 @@ public class SalesTaxTest {
         assertEquals(salesTaxOne,salesTaxTwo);
     }
 
+    @Test
+    public void specToCheckComputeTaxWithZeroTax() {
+        SalesTax salesTax = new SalesTax(1,"book",45.9,0);
+        salesTax.computeTax();
+        assertEquals("1 book 45.9",salesTax.toString());
+    }
 }

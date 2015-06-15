@@ -2,7 +2,7 @@ package com.company;
 
 public class Parser {
 
-    public SalesTax parser(String input) {
+    public SalesTax parse(String input) {
         String item = "";
         boolean imported = false;
         String tokens[] = input.split(" ");
